@@ -216,6 +216,54 @@ This program performs addition of an array of 16 bit numbers and store the 32 bi
 <hr>
 <br>
 
+<div class="heading">
+  8. write a program to count number of ones and zeroes in 2 consecutive memory location.
+</div>
+<div class="prog1">
+ 
+  <textarea name="" id="" cols="90" rows="10">
+    
+
+AREA ONEZERO, CODE, READONLY
+
+                ENTRY
+
+   START
+               MOV R2, #0
+               MOV R3, #0
+               MOV R7, #2
+               LDR   R6, =VALUE
+LOOP     MOV R1, #32
+               LDR R0, [R6], #4
+LOOP0  MOV5  R0, R0 , LDR, #1
+              BHI ONES
+ZEROES  
+               ADD R3, R3, #1
+               B LOOP1
+ONES     
+               AND R2, R2, #1
+LOOP1
+               SUBS  R7, R7, #1
+               CMP R7, #0
+               BNE  LOOP
+     STOP B STOP
+          VALUE DCD 0X11111111
+                END
+              
+
+  </textarea>
+  
+  
+</div>
+<div class="heading">
+  
+
+Conclusion:
+This program counts the number of ones and zeroes in 2 consecutive memory location.
+</div>
+<hr>
+<br>
+
 </body>
     
 
