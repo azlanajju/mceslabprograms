@@ -329,10 +329,34 @@ Conclusion: this program performs finding the smallest or largest number in an a
 <div class="prog1">
  
   <textarea name="" id="" cols="90" rows="10">
-  ###
-  ##
-  
-  #####
+ AREA ASCENDING,CODE,READONLY
+ENTRY
+			MOV R8,#4
+			LDR R2,=CVALUE
+			LDR R3,=DVALUE
+LOOP0   
+            LDR R1,[R2],#4
+			STR R1,[R3],#4
+			SUBS R8,R8,#1
+			CMP R8,#0
+			BNE LOOP0
+			
+SRART1      MOV R5,#3
+			MOV R7,#0
+			LDR R1,=DVALUE
+			
+LOOP
+			LDR R2,[R1],#4
+			LDR R3,[R1]
+			CMP R2,R3
+			BLT LOOP2
+			STR R2,[R1],#-4
+			STR R3,[R1]
+			MOV R7,#1
+			ADD R1,#4
+			
+LOOP2 		SUBS R5,R5,#1
+			CMP R5,#0
   #####
   </textarea>
   
